@@ -1,7 +1,8 @@
 # OpenEnroth for Android
 
-This repository is just a build system of OpenEnroth for Android and OpenEnroth main repository is here:
-[![Main repository of OpenEnroth](https://github.com/OpenEnroth/OpenEnroth)
+This repository is just a build system of OpenEnroth for Android and OpenEnroth's main repository is here:
+
+[Main repository of OpenEnroth](https://github.com/OpenEnroth/OpenEnroth)
 
 OpenEnroth is open-source Might and Magic VI-VIII engine remake using original data & code.
 Which allows playing original games with enhancements and modifications.
