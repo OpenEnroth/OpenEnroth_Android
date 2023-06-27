@@ -8,22 +8,20 @@ else {
 }
 
 android {
-    signingConfigs {
+    /*signingConfigs {
         debug {
-            signingConfig debug.signingConfig
-            /*storeFile file(OPENENROTH_RELEASE_STORE_FILE)
+            storeFile file(OPENENROTH_RELEASE_STORE_FILE)
             storePassword OPENENROTH_RELEASE_PASSWORD
             keyAlias OPENENROTH_RELEASE_KEY_ALIAS
             keyPassword OPENENROTH_RELEASE_PASSWORD*/
         }
         release {
-            signingConfig debug.signingConfig
-            /*storeFile file(OPENENROTH_RELEASE_STORE_FILE)
+            storeFile file(OPENENROTH_RELEASE_STORE_FILE)
             storePassword OPENENROTH_RELEASE_PASSWORD
             keyAlias OPENENROTH_RELEASE_KEY_ALIAS
-            keyPassword OPENENROTH_RELEASE_PASSWORD*/
+            keyPassword OPENENROTH_RELEASE_PASSWORD
         }
-    }
+    }*/
     compileSdkVersion 31
     ndkVersion "25.1.8937393"
     defaultConfig {
