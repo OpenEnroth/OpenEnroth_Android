@@ -39,7 +39,7 @@ android {
                 version "3.22.1"
             }
         }
-        #signingConfig signingConfigs.release
+        /*signingConfig signingConfigs.release*/
     }
     buildTypes {
         release {
