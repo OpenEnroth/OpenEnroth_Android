@@ -13,7 +13,7 @@ android {
             storeFile file(OPENENROTH_RELEASE_STORE_FILE)
             storePassword OPENENROTH_RELEASE_PASSWORD
             keyAlias OPENENROTH_RELEASE_KEY_ALIAS
-            keyPassword OPENENROTH_RELEASE_PASSWORD*/
+            keyPassword OPENENROTH_RELEASE_PASSWORD
         }
         release {
             storeFile file(OPENENROTH_RELEASE_STORE_FILE)
