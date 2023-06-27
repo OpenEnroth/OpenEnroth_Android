@@ -8,7 +8,7 @@ set -e
 
 # NDK example path ~/Android/Sdk/ndk/25.1.8937393
 
-if [[ "${NDK}" == "" ]]; then
+if [[ "${ANDROID_NDK}" == "" ]]; then
     echo "Please provide path to your NDK via NDK environment variable!"
     echo "Example: NDK=~/Android/Sdk/ndk/25.1.8937393 $0"
     exit -1
