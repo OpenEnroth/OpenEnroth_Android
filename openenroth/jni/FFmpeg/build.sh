@@ -8,9 +8,9 @@ set -e
 
 # NDK example path ~/Android/Sdk/ndk/25.1.8937393
 
-if [[ "${NDK}" == "" ]]; then
+if [[ "${ANDROID_NDK}" == "" ]]; then
     echo "Please provide path to your NDK via NDK environment variable!"
-    echo "Example: NDK=~/Android/Sdk/ndk/25.1.8937393 $0"
+    echo "Example: ANDROID_NDK=~/Android/Sdk/ndk/25.1.8937393 $0"
     exit -1
 fi
 
@@ -169,7 +169,7 @@ do
         GCC_VER=4.9
         TOOLCHAIN_NAME=${ARCH_PREFIX}-${GCC_VER}
 
-        if [[ ! -d ${NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
+        if [[ ! -d ${ANDROID_NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
             ARCH_PREFIX=armv7a-linux-androideabi
             ANDROID_PLATFORM=21
             TOOLCHAIN_NAME=llvm
@@ -189,7 +189,7 @@ do
         ARCH_PREFIX=aarch64-linux-android
         GCC_VER=4.9
         TOOLCHAIN_NAME=${ARCH_PREFIX}-${GCC_VER}
-        if [[ ! -d ${NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
+        if [[ ! -d ${ANDROID_NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
             TOOLCHAIN_NAME=llvm
         fi
 
@@ -204,7 +204,7 @@ do
         ARCH_PREFIX=i686-linux-android
         GCC_VER=4.9
         TOOLCHAIN_NAME=x86-${GCC_VER}
-        if [[ ! -d ${NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
+        if [[ ! -d ${ANDROID_NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
             ANDROID_PLATFORM=21
             TOOLCHAIN_NAME=llvm
             echo "[!!!] WARNING! compiling without asm code, use old NDK with gcc compiler if you want more optimized build!"
@@ -225,7 +225,7 @@ do
         ARCH_PREFIX=x86_64-linux-android
         GCC_VER=4.9
         TOOLCHAIN_NAME=x86_64-${GCC_VER}
-        if [[ ! -d ${NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
+        if [[ ! -d ${ANDROID_NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH} ]]; then
             TOOLCHAIN_NAME=llvm
         fi
 
@@ -241,8 +241,8 @@ do
     fi
 
     PREFIX=$(pwd)/android/${ARCH}
-    TOOLCHAIN=${NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH}
-    PATH=${NDK}:${PATH}
+    TOOLCHAIN=${ANDROID_NDK}/toolchains/${TOOLCHAIN_NAME}/prebuilt/${TOOLCHAIN_ARCH}
+    PATH=${ANDROID_NDK}:${PATH}
 
     if [[ "${TOOLCHAIN_NAME}" == "llvm" ]]; then
         echo "[+++] LLVM Clang compiler for ${ARCH} configured!"
@@ -253,7 +253,7 @@ do
         echo "[+++] GNU GCC compiler for ${ARCH} configured!"
         CC="${ARCH_PREFIX}-gcc"
         CXX="${ARCH_PREFIX}-g++"
-        SYSROOT=${NDK}/platforms/android-${ANDROID_PLATFORM}/arch-${ANDROID_PLATFORM_VARIANT}/
+        SYSROOT=${ANDROID_NDK}/platforms/android-${ANDROID_PLATFORM}/arch-${ANDROID_PLATFORM_VARIANT}/
     fi
 
 
