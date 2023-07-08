@@ -1,3 +1,5 @@
+Android build was moved to the main OpenEnroth repo. This repository is now archived.
+
 # OpenEnroth for Android
 
 This repository is just a build system of OpenEnroth for Android and OpenEnroth's main repository is here:
